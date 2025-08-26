@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitElite - Premium Gym & Fitness</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Tailwind Configuration and Styles -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        merriweather: ['Merriweather', 'serif'],
+                        lora: ['Lora', 'serif'],
+                        playfair: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'gym': {
+                            'dark': '#0a0a0a',
+                            'darker': '#070707',
+                            'gray': '#1a1a1a',
+                            'light-gray': '#2a2a2a',
+                            'accent': '#ff6b35',
+                            'accent-dark': '#e55a2b',
+                            'gold': '#d4af37',
+                            'gold-dark': '#b8941f',
+                        },
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(10, 10, 10, 0.95) 0%, 
+                rgba(26, 26, 26, 0.85) 50%, 
+                rgba(42, 42, 42, 0.95) 100%
+            );
+        }
+        
+        .text-gradient {
+            background: linear-gradient(135deg, #ff6b35 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(255, 107, 53, 0.3);
+        }
+        
+        .section-padding {
+            padding-top: 4rem;
+            padding-bottom: 4rem;
+        }
+        
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-top: 6rem;
+                padding-bottom: 6rem;
+            }
+        }
+        
+        .container-padding {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        @media (min-width: 640px) {
+            .container-padding {
+                padding-left: 1.5rem;
+                padding-right: 1.5rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .container-padding {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
+        
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: #ff6b35;
+            border-radius: 4px;
+        }
+        
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e55a2b;
+        }
+        
+        /* Hide mobile menu by default */
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Lora', serif;
+            background-color: #0a0a0a;
+            color: #f8fafc;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+    </style>
+</head>
+<body class="bg-gym-dark text-white">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-gym-light-gray">
+        <div class="container mx-auto container-padding">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center space-x-2">
+                    <i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i>
+                    <span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="hover:text-gym-accent transition-colors">Home</a>
+                    <a href="#programs" class="hover:text-gym-accent transition-colors">Programs</a>
+                    <a href="#trainers" class="hover:text-gym-accent transition-colors">Trainers</a>
+                    <a href="#facilities" class="hover:text-gym-accent transition-colors">Facilities</a>
+                    <a href="#pricing" class="hover:text-gym-accent transition-colors">Pricing</a>
+                    <a href="#contact" class="hover:text-gym-accent transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <button class="text-sm px-3 py-2 hover:text-gym-accent transition-colors">Login</button>
+                    <button class="bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">
+                        Join Now
+                    </button>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button class="md:hidden" onclick="toggleMobileMenu()">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden py-4 border-t border-gym-light-gray">
+                <div class="space-y-4">
+                    <a href="#home" class="block hover:text-gym-accent transition-colors">Home</a>
+                    <a href="#programs" class="block hover:text-gym-accent transition-colors">Programs</a>
+                    <a href="#trainers" class="block hover:text-gym-accent transition-colors">Trainers</a>
+                    <a href="#facilities" class="block hover:text-gym-accent transition-colors">Facilities</a>
+                    <a href="#pricing" class="block hover:text-gym-accent transition-colors">Pricing</a>
+                    <a href="#contact" class="block hover:text-gym-accent transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center bg-no-repeat" 
+             style="background-image: url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1920&h=1080')">
+        </div>
+        <div class="absolute inset-0 hero-gradient"></div>
+        
+        <div class="relative container mx-auto container-padding">
+            <div class="max-w-4xl">
+                <div data-aos="fade-up">
+                    <span class="inline-block mb-6 bg-gym-accent/20 text-gym-accent border border-gym-accent px-3 py-1 rounded-full text-sm">
+                        Premium Fitness Experience
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl md:text-7xl font-merriweather font-bold mb-6 leading-tight" 
+                    data-aos="fade-up" data-aos-delay="200">
+                    Transform Your 
+                    <span class="text-gradient block">Body & Mind</span>
+                </h1>
+                
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 max-w-2xl font-lora" 
+                   data-aos="fade-up" data-aos-delay="400">
+                    Join FitElite and discover a premium fitness experience with world-class trainers, 
+                    cutting-edge equipment, and personalized programs designed to help you achieve your goals.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mb-12" 
+                     data-aos="fade-up" data-aos-delay="600">
+                    <button class="bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-lg px-8 py-6 rounded-lg glow-effect transition-colors flex items-center justify-center">
+                        Start Your Journey
+                        <i data-lucide="chevron-right" class="ml-2 w-5 h-5"></i>
+                    </button>
+                    
+                    <button class="border-2 border-white text-white hover:bg-white hover:text-black text-lg px-8 py-6 rounded-lg transition-colors flex items-center justify-center">
+                        <i data-lucide="play" class="mr-2 w-5 h-5"></i>
+                        Watch Video
+                    </button>
+                </div>
+
+                <div class="grid grid-cols-3 gap-8 max-w-md" 
+                     data-aos="fade-up" data-aos-delay="800">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gym-accent mb-1">500+</div>
+                        <div class="text-sm text-gray-400">Active Members</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gym-accent mb-1">15+</div>
+                        <div class="text-sm text-gray-400">Expert Trainers</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold text-gym-accent mb-1">24/7</div>
+                        <div class="text-sm text-gray-400">Access</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Elements -->
+        <div class="absolute top-1/4 right-1/4 w-20 h-20 border border-gym-accent/30 rounded-full animate-float hidden lg:block"></div>
+        <div class="absolute bottom-1/4 left-1/4 w-16 h-16 border border-gym-gold/30 rounded-full animate-float hidden lg:block" style="animation-delay: 2s;"></div>
+    </section>
+
+    <!-- Programs Section -->
+    <section id="programs" class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Our <span class="text-gradient">Programs</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Discover our comprehensive range of fitness programs designed to meet your unique goals and fitness level.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Program 1 -->
+                <div class="bg-gym-light-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=400&h=300" 
+                             alt="Strength Training" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="dumbbell" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-merriweather font-bold">Strength Training</h3>
+                            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">All Levels</span>
+                        </div>
+                        <p class="text-gray-300 font-lora text-sm mb-4">
+                            Build muscle and increase your overall strength with our comprehensive weightlifting programs.
+                        </p>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                60 min
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 2 -->
+                <div class="bg-gym-light-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&h=300" 
+                             alt="HIIT Cardio" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="zap" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-merriweather font-bold">HIIT Cardio</h3>
+                            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">Intermediate</span>
+                        </div>
+                        <p class="text-gray-300 font-lora text-sm mb-4">
+                            High-intensity interval training to maximize calorie burn and improve cardiovascular health.
+                        </p>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                45 min
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 3 -->
+                <div class="bg-gym-light-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=300" 
+                             alt="Yoga & Flexibility" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="heart" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-merriweather font-bold">Yoga & Flexibility</h3>
+                            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">Beginner</span>
+                        </div>
+                        <p class="text-gray-300 font-lora text-sm mb-4">
+                            Improve flexibility, balance, and mindfulness through our guided yoga sessions.
+                        </p>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                75 min
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Program 4 -->
+                <div class="bg-gym-light-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&h=300" 
+                             alt="CrossFit" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="target" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="text-lg font-merriweather font-bold">CrossFit</h3>
+                            <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">Advanced</span>
+                        </div>
+                        <p class="text-gray-300 font-lora text-sm mb-4">
+                            High-intensity functional movements that will challenge your entire body.
+                        </p>
+                        
+                        <div class="flex items-center justify-between text-sm text-gray-400 mb-4">
+                            <div class="flex items-center">
+                                <i data-lucide="clock" class="w-4 h-4 mr-1"></i>
+                                50 min
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Learn More
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facilities Section -->
+    <section id="facilities" class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Premium <span class="text-gradient">Facilities</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Experience luxury and comfort with our state-of-the-art facilities designed for your success.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <!-- Facility 1 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&h=300" 
+                             alt="State-of-the-Art Equipment" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="dumbbell" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold mb-2">State-of-the-Art Equipment</h3>
+                        <p class="text-gray-300 font-lora">Latest Technogym and Life Fitness equipment</p>
+                    </div>
+                </div>
+
+                <!-- Facility 2 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=400&h=300" 
+                             alt="Olympic Swimming Pool" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="target" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold mb-2">Olympic Swimming Pool</h3>
+                        <p class="text-gray-300 font-lora">25-meter heated pool with dedicated lanes</p>
+                    </div>
+                </div>
+
+                <!-- Facility 3 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=400&h=300" 
+                             alt="Luxury Spa & Sauna" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="heart" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold mb-2">Luxury Spa & Sauna</h3>
+                        <p class="text-gray-300 font-lora">Recovery and relaxation facilities</p>
+                    </div>
+                </div>
+
+                <!-- Facility 4 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="600">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1556909114-d6a8d8d43087?auto=format&fit=crop&w=400&h=300" 
+                             alt="Nutrition Bar" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 left-4 bg-gym-accent text-black p-2 rounded-lg">
+                            <i data-lucide="utensils" class="w-8 h-8"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold mb-2">Nutrition Bar</h3>
+                        <p class="text-gray-300 font-lora">Healthy smoothies and post-workout meals</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <div class="bg-gym-gray rounded-2xl p-8" data-aos="fade-up">
+                <h3 class="text-2xl font-merriweather font-bold mb-6 text-center">Additional Amenities</h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="wifi" class="w-6 h-6 text-gym-accent"></i>
+                        <span>Free WiFi</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="car" class="w-6 h-6 text-gym-accent"></i>
+                        <span>Free Parking</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="shield" class="w-6 h-6 text-gym-accent"></i>
+                        <span>24/7 Security</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i data-lucide="smartphone" class="w-6 h-6 text-gym-accent"></i>
+                        <span>Mobile App</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Class Schedule Section -->
+    <section class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Today's <span class="text-gradient">Schedule</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Join our popular group classes led by certified trainers.
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-4" data-aos="fade-up" data-aos-delay="400">
+                    <!-- Class 1 -->
+                    <div class="bg-gym-dark rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-gym-accent border border-transparent transition-all">
+                        <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                            <div class="text-gym-accent font-bold text-lg">6:00 AM</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Morning HIIT</h4>
+                                <p class="text-gray-400">with Marcus</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="border border-gym-accent text-gym-accent px-3 py-1 rounded text-sm">
+                                8 spots left
+                            </span>
+                            <button class="bg-gym-accent hover:bg-gym-accent-dark text-black px-4 py-2 rounded text-sm font-semibold transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class 2 -->
+                    <div class="bg-gym-dark rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-gym-accent border border-transparent transition-all">
+                        <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                            <div class="text-gym-accent font-bold text-lg">7:30 AM</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Yoga Flow</h4>
+                                <p class="text-gray-400">with Emma</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="border border-gym-accent text-gym-accent px-3 py-1 rounded text-sm">
+                                12 spots left
+                            </span>
+                            <button class="bg-gym-accent hover:bg-gym-accent-dark text-black px-4 py-2 rounded text-sm font-semibold transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class 3 -->
+                    <div class="bg-gym-dark rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-gym-accent border border-transparent transition-all">
+                        <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                            <div class="text-gym-accent font-bold text-lg">12:00 PM</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Strength Training</h4>
+                                <p class="text-gray-400">with Sarah</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="border border-gym-accent text-gym-accent px-3 py-1 rounded text-sm">
+                                6 spots left
+                            </span>
+                            <button class="bg-gym-accent hover:bg-gym-accent-dark text-black px-4 py-2 rounded text-sm font-semibold transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class 4 -->
+                    <div class="bg-gym-dark rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-gym-accent border border-transparent transition-all">
+                        <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                            <div class="text-gym-accent font-bold text-lg">6:00 PM</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">CrossFit</h4>
+                                <p class="text-gray-400">with Marcus</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="border border-gym-accent text-gym-accent px-3 py-1 rounded text-sm">
+                                4 spots left
+                            </span>
+                            <button class="bg-gym-accent hover:bg-gym-accent-dark text-black px-4 py-2 rounded text-sm font-semibold transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Class 5 -->
+                    <div class="bg-gym-dark rounded-lg p-6 flex flex-col md:flex-row md:items-center justify-between hover:border-gym-accent border border-transparent transition-all">
+                        <div class="flex items-center space-x-6 mb-4 md:mb-0">
+                            <div class="text-gym-accent font-bold text-lg">7:30 PM</div>
+                            <div>
+                                <h4 class="font-semibold text-lg">Evening Yoga</h4>
+                                <p class="text-gray-400">with Emma</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <span class="border border-gym-accent text-gym-accent px-3 py-1 rounded text-sm">
+                                10 spots left
+                            </span>
+                            <button class="bg-gym-accent hover:bg-gym-accent-dark text-black px-4 py-2 rounded text-sm font-semibold transition-colors">
+                                Book Now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center mt-8">
+                    <button class="bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black px-6 py-3 rounded transition-colors">
+                        View Full Schedule
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trainers Section -->
+    <section id="trainers" class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Meet Our <span class="text-gradient">Expert Trainers</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Our certified fitness professionals are here to guide you every step of your fitness journey.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Trainer 1 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 text-center rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1594736797933-d0ac86ace02a?auto=format&fit=crop&w=300&h=300" 
+                                 alt="Sarah Johnson" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute -bottom-2 -right-2 bg-gym-accent text-black p-2 rounded-full">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-merriweather font-bold mb-1">Sarah Johnson</h3>
+                        <p class="text-gym-accent font-semibold mb-3">Strength & Conditioning</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center justify-center">
+                                <div class="flex items-center mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                </div>
+                                <span class="text-sm text-gray-300">4.9</span>
+                            </div>
+                            <p class="text-sm text-gray-400">8+ years Experience</p>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">NASM-CPT</span>
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">CSCS</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trainer 2 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 text-center rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&h=300" 
+                                 alt="Marcus Rodriguez" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute -bottom-2 -right-2 bg-gym-accent text-black p-2 rounded-full">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-merriweather font-bold mb-1">Marcus Rodriguez</h3>
+                        <p class="text-gym-accent font-semibold mb-3">HIIT & Cardio</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center justify-center">
+                                <div class="flex items-center mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gray-400"></i>
+                                </div>
+                                <span class="text-sm text-gray-300">4.8</span>
+                            </div>
+                            <p class="text-sm text-gray-400">6+ years Experience</p>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">ACE</span>
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">HIIT Specialist</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Trainer 3 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 text-center rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="relative w-32 h-32 mx-auto mb-4">
+                            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=300&h=300" 
+                                 alt="Emma Chen" class="w-full h-full object-cover rounded-full group-hover:scale-105 transition-transform duration-300">
+                            <div class="absolute -bottom-2 -right-2 bg-gym-accent text-black p-2 rounded-full">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </div>
+                        </div>
+                        
+                        <h3 class="text-xl font-merriweather font-bold mb-1">Emma Chen</h3>
+                        <p class="text-gym-accent font-semibold mb-3">Yoga & Wellness</p>
+                        
+                        <div class="space-y-3 mb-4">
+                            <div class="flex items-center justify-center">
+                                <div class="flex items-center mr-2">
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                    <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                                </div>
+                                <span class="text-sm text-gray-300">5.0</span>
+                            </div>
+                            <p class="text-sm text-gray-400">10+ years Experience</p>
+                            <div class="flex flex-wrap justify-center gap-2">
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">RYT-500</span>
+                                <span class="bg-gray-600 text-white text-xs px-2 py-1 rounded">Wellness Coach</span>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-2 px-4 rounded transition-colors">
+                            Book Session
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Success <span class="text-gradient">Stories</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Real transformations from real people who achieved their fitness goals with us.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+                <!-- Success Story 1 -->
+                <div class="bg-gym-dark rounded-2xl p-8" data-aos="fade-up" data-aos-delay="0">
+                    <div class="flex items-center space-x-6 mb-6">
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1566753323558-f4e0952af115?auto=format&fit=crop&w=200&h=200" 
+                                 alt="Before" class="w-24 h-24 object-cover rounded-lg mb-2">
+                            <span class="text-sm text-gray-400">Before</span>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-8 h-8 text-gym-accent"></i>
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1583468982228-19f19164aee2?auto=format&fit=crop&w=200&h=200" 
+                                 alt="After" class="w-24 h-24 object-cover rounded-lg mb-2">
+                            <span class="text-sm text-gray-400">After</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-merriweather font-bold mb-2">Alex Thompson</h3>
+                    <div class="text-gym-accent font-semibold mb-4">Lost 45 lbs in 6 months</div>
+                    <p class="text-gray-300 font-lora italic">"Started as a complete beginner and now I'm training for my first marathon!"</p>
+                </div>
+
+                <!-- Success Story 2 -->
+                <div class="bg-gym-dark rounded-2xl p-8" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center space-x-6 mb-6">
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=200&h=200" 
+                                 alt="Before" class="w-24 h-24 object-cover rounded-lg mb-2">
+                            <span class="text-sm text-gray-400">Before</span>
+                        </div>
+                        <i data-lucide="arrow-right" class="w-8 h-8 text-gym-accent"></i>
+                        <div class="text-center">
+                            <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=200&h=200" 
+                                 alt="After" class="w-24 h-24 object-cover rounded-lg mb-2">
+                            <span class="text-sm text-gray-400">After</span>
+                        </div>
+                    </div>
+                    
+                    <h3 class="text-xl font-merriweather font-bold mb-2">Lisa Chang</h3>
+                    <div class="text-gym-accent font-semibold mb-4">Gained 15 lbs muscle</div>
+                    <p class="text-gray-300 font-lora italic">"Transformed from cardio-only to strength training and love how strong I feel!"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    What Our Members <span class="text-gradient">Say</span>
+                </h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b5e4?auto=format&fit=crop&w=150&h=150" 
+                                 alt="Jennifer Walsh" class="w-12 h-12 object-cover rounded-full">
+                            <div>
+                                <h4 class="font-semibold">Jennifer Walsh</h4>
+                                <p class="text-sm text-gray-400">Business Executive</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                        </div>
+                        
+                        <i data-lucide="quote" class="w-8 h-8 text-gym-accent mb-4"></i>
+                        <p class="text-gray-300 font-lora italic">FitElite transformed my life completely. I lost 30 pounds and gained incredible strength. The trainers are amazing and truly care about your progress.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&h=150" 
+                                 alt="David Kim" class="w-12 h-12 object-cover rounded-full">
+                            <div>
+                                <h4 class="font-semibold">David Kim</h4>
+                                <p class="text-sm text-gray-400">Software Engineer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                        </div>
+                        
+                        <i data-lucide="quote" class="w-8 h-8 text-gym-accent mb-4"></i>
+                        <p class="text-gray-300 font-lora italic">Best gym I've ever joined. The equipment is top-notch, facilities are always clean, and the community is incredibly supportive.</p>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6">
+                        <div class="flex items-center space-x-4 mb-4">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=150&h=150" 
+                                 alt="Maria Gonzalez" class="w-12 h-12 object-cover rounded-full">
+                            <div>
+                                <h4 class="font-semibold">Maria Gonzalez</h4>
+                                <p class="text-sm text-gray-400">Teacher</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-center mb-4">
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                            <i data-lucide="star" class="w-4 h-4 text-gym-gold fill-current"></i>
+                        </div>
+                        
+                        <i data-lucide="quote" class="w-8 h-8 text-gym-accent mb-4"></i>
+                        <p class="text-gray-300 font-lora italic">The yoga classes here are phenomenal. Emma is an incredible instructor, and I've never felt more flexible and centered in my life.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Latest from Our <span class="text-gradient">Blog</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Expert tips, workout guides, and nutrition advice to enhance your fitness journey.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-gym-dark border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=300&h=200" 
+                             alt="5 Essential Nutrition Tips for Muscle Building" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-gym-accent text-black px-3 py-1 rounded text-sm font-semibold">
+                            Nutrition
+                        </span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold group-hover:text-gym-accent transition-colors mb-2">
+                            5 Essential Nutrition Tips for Muscle Building
+                        </h3>
+                        <p class="text-gray-300 font-lora mb-4">
+                            Discover the key nutritional strategies that will maximize your muscle growth and recovery.
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-400">5 min read</span>
+                            <button class="bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black px-4 py-2 rounded text-sm transition-colors">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 2 -->
+                <div class="bg-gym-dark border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&h=200" 
+                             alt="The Science Behind HIIT Training" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-gym-accent text-black px-3 py-1 rounded text-sm font-semibold">
+                            Training
+                        </span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold group-hover:text-gym-accent transition-colors mb-2">
+                            The Science Behind HIIT Training
+                        </h3>
+                        <p class="text-gray-300 font-lora mb-4">
+                            Learn why high-intensity interval training is so effective for fat loss and cardiovascular health.
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-400">7 min read</span>
+                            <button class="bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black px-4 py-2 rounded text-sm transition-colors">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Blog Post 3 -->
+                <div class="bg-gym-dark border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=300&h=200" 
+                             alt="Mental Health Benefits of Regular Exercise" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <span class="absolute top-4 left-4 bg-gym-accent text-black px-3 py-1 rounded text-sm font-semibold">
+                            Wellness
+                        </span>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-lg font-merriweather font-bold group-hover:text-gym-accent transition-colors mb-2">
+                            Mental Health Benefits of Regular Exercise
+                        </h3>
+                        <p class="text-gray-300 font-lora mb-4">
+                            Explore how consistent exercise can improve your mental well-being and reduce stress.
+                        </p>
+                        
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm text-gray-400">6 min read</span>
+                            <button class="bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black px-4 py-2 rounded text-sm transition-colors">
+                                Read More
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold px-6 py-3 rounded transition-colors flex items-center mx-auto">
+                    Visit Our Blog
+                    <i data-lucide="book-open" class="ml-2 w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events & Challenges Section -->
+    <section class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Upcoming <span class="text-gradient">Events</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Join our community events and challenges to stay motivated and have fun.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Event 1 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&h=200" 
+                             alt="Summer Body Challenge" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4 bg-gym-accent text-black px-3 py-1 rounded-full text-sm font-semibold">
+                            45 joined
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Summer Body Challenge</h3>
+                        <div class="flex items-center text-gym-accent font-semibold mb-2">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            June 15 - August 15
+                        </div>
+                        <p class="text-gray-300 font-lora mb-4">
+                            8-week transformation challenge with prizes for top performers
+                        </p>
+                        
+                        <button class="w-full bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold py-2 px-4 rounded transition-colors">
+                            Join Event
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Event 2 -->
+                <div class="bg-gym-gray border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg group" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden rounded-t-lg">
+                        <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=300&h=200" 
+                             alt="Charity 5K Run" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div class="absolute top-4 right-4 bg-gym-accent text-black px-3 py-1 rounded-full text-sm font-semibold">
+                            120 joined
+                        </div>
+                    </div>
+                    
+                    <div class="p-6">
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Charity 5K Run</h3>
+                        <div class="flex items-center text-gym-accent font-semibold mb-2">
+                            <i data-lucide="calendar" class="w-4 h-4 mr-2"></i>
+                            July 20, 2024
+                        </div>
+                        <p class="text-gray-300 font-lora mb-4">
+                            Join us for a community run supporting local charities
+                        </p>
+                        
+                        <button class="w-full bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold py-2 px-4 rounded transition-colors">
+                            Join Event
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Gym <span class="text-gradient">Gallery</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Take a virtual tour of our premium facilities and see our community in action.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 1" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 2" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 3" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="300">
+                    <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 4" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="400">
+                    <img src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 5" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="500">
+                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 6" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="600">
+                    <img src="https://images.unsplash.com/photo-1556909114-d6a8d8d43087?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+                
+                <div class="relative group overflow-hidden rounded-lg aspect-square" data-aos="fade-up" data-aos-delay="700">
+                    <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?auto=format&fit=crop&w=300&h=300" 
+                         alt="Gallery 8" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-gym-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <i data-lucide="camera" class="w-8 h-8 text-white"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <button class="bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black px-6 py-3 rounded transition-colors flex items-center mx-auto">
+                    View Full Gallery
+                    <i data-lucide="camera" class="ml-2 w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mobile App Section -->
+    <section class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6">
+                        Take FitElite <span class="text-gradient">Anywhere</span>
+                    </h2>
+                    <p class="text-xl text-gray-300 mb-8 font-lora">
+                        Download our mobile app to book classes, track workouts, connect with trainers, 
+                        and access exclusive content wherever you are.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-gym-accent"></i>
+                            <span>Book classes and sessions</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-gym-accent"></i>
+                            <span>Track your fitness progress</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-gym-accent"></i>
+                            <span>Access workout plans</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="w-6 h-6 text-gym-accent"></i>
+                            <span>Connect with your trainer</span>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-4">
+                        <button class="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded flex items-center transition-colors">
+                            <i data-lucide="apple" class="mr-2 w-5 h-5"></i>
+                            App Store
+                        </button>
+                        <button class="bg-black text-white hover:bg-gray-800 px-6 py-3 rounded flex items-center transition-colors">
+                            <i data-lucide="smartphone" class="mr-2 w-5 h-5"></i>
+                            Google Play
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="relative" data-aos="fade-left">
+                    <div class="relative w-64 h-96 mx-auto">
+                        <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?auto=format&fit=crop&w=300&h=600" 
+                             alt="Mobile App" class="w-full h-full object-cover rounded-3xl shadow-2xl">
+                        <div class="absolute inset-0 bg-gradient-to-t from-gym-accent/20 to-transparent rounded-3xl"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="section-padding bg-gym-gray">
+        <div class="container mx-auto container-padding">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6" data-aos="fade-up">
+                    Choose Your <span class="text-gradient">Membership</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-2xl mx-auto font-lora" data-aos="fade-up" data-aos-delay="200">
+                    Select the perfect plan that fits your lifestyle and fitness goals.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="relative bg-gym-dark border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="0">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-merriweather font-bold mb-4">Basic</h3>
+                        <div class="text-4xl font-bold text-gym-accent mb-6">
+                            $29
+                            <span class="text-lg font-normal text-gray-400">/month</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Access to gym equipment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Locker room access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Basic fitness assessment</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Mobile app access</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-3 px-4 rounded transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Premium Plan -->
+                <div class="relative border-gym-accent bg-gym-light-gray scale-105 border transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gym-accent text-black font-semibold px-4 py-1 rounded-full text-sm">
+                            Most Popular
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-merriweather font-bold mb-4">Premium</h3>
+                        <div class="text-4xl font-bold text-gym-accent mb-6">
+                            $59
+                            <span class="text-lg font-normal text-gray-400">/month</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Everything in Basic</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Unlimited group classes</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Personal trainer consultation</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Nutrition guidance</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Priority booking</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-gym-accent hover:bg-gym-accent-dark text-black py-3 px-4 rounded font-semibold transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Elite Plan -->
+                <div class="relative bg-gym-dark border border-gym-light-gray hover:border-gym-accent transition-all duration-300 rounded-lg" 
+                     data-aos="fade-up" data-aos-delay="400">
+                    <div class="p-6 text-center">
+                        <h3 class="text-2xl font-merriweather font-bold mb-4">Elite</h3>
+                        <div class="text-4xl font-bold text-gym-accent mb-6">
+                            $99
+                            <span class="text-lg font-normal text-gray-400">/month</span>
+                        </div>
+                        
+                        <ul class="space-y-3 mb-8 text-left">
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Everything in Premium</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">4 personal training sessions</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Massage therapy access</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">VIP locker room</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i data-lucide="check-circle" class="w-5 h-5 text-gym-accent mr-3 flex-shrink-0"></i>
+                                <span class="text-gray-300">Guest passes (2/month)</span>
+                            </li>
+                        </ul>
+                        
+                        <button class="w-full bg-transparent border border-gym-accent text-gym-accent hover:bg-gym-accent hover:text-black py-3 px-4 rounded transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section-padding bg-gym-dark">
+        <div class="container mx-auto container-padding">
+            <div class="bg-gradient-to-r from-gym-accent to-gym-gold rounded-2xl p-12 text-center text-black" data-aos="fade-up">
+                <h2 class="text-4xl md:text-5xl font-merriweather font-bold mb-6">
+                    Ready to Transform Your Life?
+                </h2>
+                <p class="text-xl mb-8 font-lora opacity-90">
+                    Join thousands of members who have already started their fitness journey with us.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-black text-white hover:bg-gray-800 text-lg px-8 py-6 rounded-lg font-semibold transition-colors">
+                        Start Free Trial
+                    </button>
+                    <button class="border-2 border-black text-black hover:bg-black hover:text-white text-lg px-8 py-6 rounded-lg transition-colors">
+                        Schedule Tour
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gym-darker py-16">
+        <div class="container mx-auto container-padding">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i>
+                        <span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span>
+                    </div>
+                    <p class="text-gray-400 mb-6 font-lora">
+                        Transform your body and mind with our premium fitness experience.
+                    </p>
+                    <div class="flex space-x-4">
+                        <button class="bg-gym-accent hover:bg-gym-accent-dark text-black p-2 rounded transition-colors">
+                            <i data-lucide="facebook" class="w-4 h-4"></i>
+                        </button>
+                        <button class="bg-gym-accent hover:bg-gym-accent-dark text-black p-2 rounded transition-colors">
+                            <i data-lucide="instagram" class="w-4 h-4"></i>
+                        </button>
+                        <button class="bg-gym-accent hover:bg-gym-accent-dark text-black p-2 rounded transition-colors">
+                            <i data-lucide="youtube" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-merriweather font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#programs" class="hover:text-gym-accent transition-colors">Programs</a></li>
+                        <li><a href="#trainers" class="hover:text-gym-accent transition-colors">Trainers</a></li>
+                        <li><a href="#facilities" class="hover:text-gym-accent transition-colors">Facilities</a></li>
+                        <li><a href="#pricing" class="hover:text-gym-accent transition-colors">Pricing</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-merriweather font-semibold mb-4">Support</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-gym-accent transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-gym-accent transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-gym-accent transition-colors">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-gym-accent transition-colors">Membership FAQ</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-merriweather font-semibold mb-4">Contact Info</h3>
+                    <div class="space-y-3 text-gray-400">
+                        <div class="flex items-center">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-2 text-gym-accent"></i>
+                            <span>123 Fitness Street, New York, NY 10001</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="phone" class="w-4 h-4 mr-2 text-gym-accent"></i>
+                            <span>(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i data-lucide="mail" class="w-4 h-4 mr-2 text-gym-accent"></i>
+                            <span>info@fitelite.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gym-light-gray pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FitElite. All rights reserved. | Designed with ❤️ for fitness enthusiasts</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Initialize AOS animations
+        AOS.init({
+            duration: 1000,
+            once: true,
+            easing: 'ease-out-cubic',
+        });
+
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('active');
+        }
+
+        // Smooth scroll for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = 64; // nav height
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    mobileMenu.classList.remove('active');
+                });
+            });
+        });
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-gym-dark');
+                navbar.classList.remove('bg-gym-dark/95');
+            } else {
+                navbar.classList.add('bg-gym-dark/95');
+                navbar.classList.remove('bg-gym-dark');
+            }
+        });
+    </script>
+</body>
+</html>
