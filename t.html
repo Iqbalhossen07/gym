@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitElite - Premium Gym & Fitness Center | Transform Your Body & Mind</title>
+    <meta name="description" content="Join FitElite, the premier gym and fitness center offering state-of-the-art equipment, expert personal trainers, group classes, and 24/7 access. Start your fitness transformation today!">
+    <meta name="keywords" content="gym, fitness, personal training, group classes, strength training, cardio, yoga, nutrition, health, wellness, FitElite">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        heading: ['Merriweather', 'serif'],
+                        body: ['Lora', 'serif'],
+                        display: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        border: 'hsl(210 15% 25%)',
+                        input: 'hsl(210 15% 20%)',
+                        ring: 'hsl(45 93% 58%)',
+                        background: 'hsl(210 11% 15%)',
+                        foreground: 'hsl(0 0% 95%)',
+                        primary: {
+                            DEFAULT: 'hsl(45 93% 58%)',
+                            foreground: 'hsl(210 11% 15%)'
+                        },
+                        secondary: {
+                            DEFAULT: 'hsl(210 15% 25%)',
+                            foreground: 'hsl(0 0% 95%)'
+                        },
+                        destructive: {
+                            DEFAULT: 'hsl(0 84% 60%)',
+                            foreground: 'hsl(0 0% 98%)'
+                        },
+                        muted: {
+                            DEFAULT: 'hsl(210 15% 20%)',
+                            foreground: 'hsl(0 0% 70%)'
+                        },
+                        accent: {
+                            DEFAULT: 'hsl(45 93% 58%)',
+                            foreground: 'hsl(210 11% 15%)'
+                        },
+                        popover: {
+                            DEFAULT: 'hsl(210 15% 12%)',
+                            foreground: 'hsl(0 0% 95%)'
+                        },
+                        card: {
+                            DEFAULT: 'hsl(210 11% 15%)',
+                            foreground: 'hsl(0 0% 95%)'
+                        },
+                        'gym-gold': 'hsl(45 93% 58%)',
+                        'gym-dark': 'hsl(210 11% 15%)',
+                        'gym-darker': 'hsl(210 15% 12%)',
+                        'gym-light': 'hsl(210 15% 25%)',
+                        'gym-accent': 'hsl(14 100% 57%)'
+                    },
+                    borderRadius: {
+                        lg: '0.75rem',
+                        md: 'calc(0.75rem - 2px)',
+                        sm: 'calc(0.75rem - 4px)',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            background-color: hsl(210 11% 15%);
+            color: hsl(0 0% 95%);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Merriweather', serif;
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .font-body {
+            font-family: 'Lora', serif;
+        }
+        
+        .font-heading {
+            font-family: 'Merriweather', serif;
+        }
+        
+        /* Animation Styles */
+        [data-aos] {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        
+        [data-aos].aos-animate {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        [data-aos="fade-right"] {
+            transform: translateX(-50px);
+        }
+        
+        [data-aos="fade-left"] {
+            transform: translateX(50px);
+        }
+        
+        [data-aos="fade-right"].aos-animate,
+        [data-aos="fade-left"].aos-animate {
+            transform: translateX(0);
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background-color: hsl(45 93% 58%);
+            color: hsl(210 11% 15%);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: background-color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: hsl(45 93% 50%);
+        }
+        
+        .btn-outline {
+            border: 1px solid hsl(45 93% 58%);
+            color: hsl(45 93% 58%);
+            background: transparent;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.75rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .btn-outline:hover {
+            background-color: hsl(45 93% 58%);
+            color: hsl(210 11% 15%);
+        }
+        
+        .btn-lg {
+            padding: 1rem 2rem;
+            font-size: 1.125rem;
+        }
+        
+        /* Card Styles */
+        .card {
+            background-color: hsl(210 11% 15%);
+            border: 1px solid hsl(210 15% 25%);
+            border-radius: 0.75rem;
+            transition: border-color 0.2s ease;
+        }
+        
+        .card:hover {
+            border-color: hsl(45 93% 58% / 0.5);
+        }
+        
+        /* Badge Styles */
+        .badge {
+            background-color: hsl(45 93% 58% / 0.1);
+            color: hsl(45 93% 58%);
+            border: 1px solid hsl(45 93% 58% / 0.2);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        .badge-outline {
+            background: transparent;
+            border: 1px solid hsl(45 93% 58% / 0.5);
+            color: hsl(45 93% 58%);
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.875rem;
+            font-weight: 500;
+        }
+        
+        /* Mobile menu */
+        .mobile-menu {
+            display: none;
+        }
+        
+        .mobile-menu.active {
+            display: block;
+        }
+        
+        /* Gradient background */
+        .gradient-bg-1 {
+            background: linear-gradient(135deg, hsl(210 11% 15%) 0%, hsl(210 15% 12%) 50%, hsl(210 11% 15%) 100%);
+        }
+        
+        .gradient-bg-2 {
+            background: linear-gradient(90deg, hsl(45 93% 58%) 0%, hsl(14 100% 57%) 100%);
+        }
+        
+        /* Stat cards */
+        .stat-card {
+            background-color: hsl(210 11% 15% / 0.9);
+            backdrop-filter: blur(8px);
+            border: 1px solid hsl(210 15% 25%);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 10px 10px -5px rgb(0 0 0 / 0.04);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-background/95 backdrop-blur border-b border-border">
+        <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center space-x-2">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+                            <svg class="h-6 w-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2v6.5c0 1.7-1.3 3-3 3s-3-1.3-3-3V2h2v6.5c0 .6.4 1 1 1s1-.4 1-1V2h2zm-7 8.5c1.7 0 3-1.3 3-3V2H8v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2H4v5.5c0 1.7 1.3 3 3 3zm10 0c1.7 0 3-1.3 3-3V2h-2v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2h-2v5.5c0 1.7 1.3 3 3 3z"/>
+                            </svg>
+                        </div>
+                        <span class="font-heading text-2xl font-bold text-foreground">FitElite</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#" class="font-body text-sm font-medium text-primary transition-colors hover:text-primary">Home</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Programs</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Classes</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Pricing</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Trainers</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Blog</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Events</a>
+                        <a href="#" class="font-body text-sm font-medium text-muted-foreground transition-colors hover:text-primary">Contact</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#" class="btn-primary">Start Your Journey</a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="p-2 text-muted-foreground hover:text-primary transition-colors" aria-label="Toggle menu">
+                        <svg id="menu-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="close-icon" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="mobile-menu md:hidden">
+                <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium bg-primary text-primary-foreground">Home</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Programs</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Classes</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Pricing</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Trainers</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Blog</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Events</a>
+                    <a href="#" class="block rounded-md px-3 py-2 font-body text-base font-medium text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors">Contact</a>
+                    <div class="px-3 py-2">
+                        <a href="#" class="btn-primary w-full justify-center">Start Your Journey</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden gradient-bg-1">
+            <div class="absolute inset-0 bg-gradient-to-r from-gym-dark/50 to-transparent"></div>
+            <div class="relative mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8 lg:py-32">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left" data-aos="fade-right">
+                        <div class="badge mb-4" data-aos="fade-up" data-aos-delay="200">
+                            New Member Special - 50% Off First Month
+                        </div>
+                        <h1 class="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight" data-aos="fade-up" data-aos-delay="300">
+                            Transform Your
+                            <span class="text-primary block">Body & Mind</span>
+                        </h1>
+                        <p class="font-body text-lg sm:text-xl text-muted-foreground mb-8 max-w-lg mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="400">
+                            Join FitElite and discover a premium fitness experience designed to push your limits and achieve extraordinary results.
+                        </p>
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start max-w-md mx-auto lg:mx-0" data-aos="fade-up" data-aos-delay="500">
+                            <a href="#" class="btn-primary btn-lg">
+                                Start Free Trial
+                                <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </a>
+                            <a href="#" class="btn-outline btn-lg">
+                                <svg class="mr-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z"/>
+                                </svg>
+                                Watch Tour
+                            </a>
+                        </div>
+                    </div>
+                    <div class="relative" data-aos="fade-left" data-aos-delay="300">
+                        <div class="aspect-square lg:aspect-[4/3] rounded-2xl bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden">
+                            <img src="/placeholder.svg" alt="Fitness training" class="w-full h-full object-cover">
+                            <div class="absolute inset-0 bg-gradient-to-t from-gym-dark/50 to-transparent"></div>
+                        </div>
+                        <!-- Floating stats -->
+                        <div class="absolute -bottom-6 -left-6 stat-card">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary">
+                                    <svg class="h-6 w-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.5 2.5 0 0 0 17.5 7h-3A2.5 2.5 0 0 0 12.04 8.37L9.5 16H12v6h8z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-heading text-2xl font-bold text-foreground">2,500+</div>
+                                    <div class="font-body text-sm text-muted-foreground">Active Members</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -right-6 stat-card">
+                            <div class="flex items-center space-x-3">
+                                <div class="flex h-12 w-12 items-center justify-center rounded-full bg-gym-accent">
+                                    <svg class="h-6 w-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <div class="font-heading text-2xl font-bold text-foreground">98%</div>
+                                    <div class="font-body text-sm text-muted-foreground">Success Rate</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="py-16 bg-background">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-4xl font-bold text-foreground mb-4">
+                        Why Choose FitElite?
+                    </h2>
+                    <p class="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Experience the difference with our premium facilities, expert guidance, and unwavering commitment to your success.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2v6.5c0 1.7-1.3 3-3 3s-3-1.3-3-3V2h2v6.5c0 .6.4 1 1 1s1-.4 1-1V2h2zm-7 8.5c1.7 0 3-1.3 3-3V2H8v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2H4v5.5c0 1.7 1.3 3 3 3zm10 0c1.7 0 3-1.3 3-3V2h-2v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2h-2v5.5c0 1.7 1.3 3 3 3z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                            State-of-the-Art Equipment
+                        </h3>
+                        <p class="font-body text-muted-foreground">
+                            Latest fitness technology and premium equipment for optimal results
+                        </p>
+                    </div>
+                    <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="100">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M16 4c0-1.11.89-2 2-2s2 .89 2 2-.89 2-2 2-2-.89-2-2zm4 18v-6h2.5l-2.54-7.63A2.5 2.5 0 0 0 17.5 7h-3A2.5 2.5 0 0 0 12.04 8.37L9.5 16H12v6h8z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                            Expert Personal Trainers
+                        </h3>
+                        <p class="font-body text-muted-foreground">
+                            Certified professionals dedicated to your fitness journey
+                        </p>
+                    </div>
+                    <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="200">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                            24/7 Access
+                        </h3>
+                        <p class="font-body text-muted-foreground">
+                            Train on your schedule with round-the-clock facility access
+                        </p>
+                    </div>
+                    <div class="card p-6 text-center" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10 mx-auto mb-4">
+                            <svg class="h-8 w-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z"/>
+                            </svg>
+                        </div>
+                        <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                            Nutrition Guidance
+                        </h3>
+                        <p class="font-body text-muted-foreground">
+                            Comprehensive meal plans and nutritional counseling
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Programs Preview -->
+        <section class="py-16" style="background-color: hsl(210 15% 12%);">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-4xl font-bold text-foreground mb-4">
+                        Our Fitness Programs
+                    </h2>
+                    <p class="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Discover a wide range of training programs designed to meet your specific fitness goals and experience level.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="card overflow-hidden group" data-aos="fade-up" data-aos-delay="0">
+                        <div class="aspect-video bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden">
+                            <img src="/placeholder.svg" alt="Strength Training" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="badge-outline">All Levels</span>
+                                <div class="flex items-center text-muted-foreground">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                                    </svg>
+                                    <span class="font-body text-sm">45-60 min</span>
+                                </div>
+                            </div>
+                            <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                                Strength Training
+                            </h3>
+                            <p class="font-body text-muted-foreground mb-4">
+                                Build muscle and increase power with our comprehensive strength programs
+                            </p>
+                            <a href="#" class="btn-outline w-full justify-center">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card overflow-hidden group" data-aos="fade-up" data-aos-delay="150">
+                        <div class="aspect-video bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden">
+                            <img src="/placeholder.svg" alt="HIIT Workouts" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="badge-outline">Intermediate</span>
+                                <div class="flex items-center text-muted-foreground">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                                    </svg>
+                                    <span class="font-body text-sm">30-45 min</span>
+                                </div>
+                            </div>
+                            <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                                HIIT Workouts
+                            </h3>
+                            <p class="font-body text-muted-foreground mb-4">
+                                High-intensity interval training for maximum calorie burn
+                            </p>
+                            <a href="#" class="btn-outline w-full justify-center">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="card overflow-hidden group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="aspect-video bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden">
+                            <img src="/placeholder.svg" alt="Yoga & Flexibility" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="p-6">
+                            <div class="flex items-center justify-between mb-3">
+                                <span class="badge-outline">All Levels</span>
+                                <div class="flex items-center text-muted-foreground">
+                                    <svg class="h-4 w-4 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M16.2,16.2L11,13V7H12.5V12.2L17,14.9L16.2,16.2Z"/>
+                                    </svg>
+                                    <span class="font-body text-sm">60-90 min</span>
+                                </div>
+                            </div>
+                            <h3 class="font-heading text-xl font-semibold text-foreground mb-2">
+                                Yoga & Flexibility
+                            </h3>
+                            <p class="font-body text-muted-foreground mb-4">
+                                Improve flexibility, balance, and mental wellness
+                            </p>
+                            <a href="#" class="btn-outline w-full justify-center">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="btn-primary btn-lg">
+                        View All Programs
+                        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="py-16 bg-background">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-4xl font-bold text-foreground mb-4">
+                        Success Stories
+                    </h2>
+                    <p class="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Hear from our members who have transformed their lives at FitElite.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="card p-6" data-aos="fade-up" data-aos-delay="0">
+                        <div class="flex items-center mb-4">
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <p class="font-body text-muted-foreground mb-6 italic">
+                            "FitElite transformed my life. The trainers are incredible and the facility is world-class."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden mr-4">
+                                <img src="/placeholder.svg" alt="Sarah Johnson" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="font-heading font-semibold text-foreground">Sarah Johnson</div>
+                                <div class="font-body text-sm text-muted-foreground">Marketing Executive</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-6" data-aos="fade-up" data-aos-delay="150">
+                        <div class="flex items-center mb-4">
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <p class="font-body text-muted-foreground mb-6 italic">
+                            "Best investment I've made. Lost 30 pounds and gained so much confidence."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden mr-4">
+                                <img src="/placeholder.svg" alt="Mike Chen" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="font-heading font-semibold text-foreground">Mike Chen</div>
+                                <div class="font-body text-sm text-muted-foreground">Software Engineer</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card p-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="flex items-center mb-4">
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                            <svg class="h-5 w-5 text-primary fill-current" viewBox="0 0 24 24">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                            </svg>
+                        </div>
+                        <p class="font-body text-muted-foreground mb-6 italic">
+                            "The community here is amazing. Everyone supports each other's goals."
+                        </p>
+                        <div class="flex items-center">
+                            <div class="h-12 w-12 rounded-full bg-gradient-to-br from-primary/20 to-gym-accent/20 overflow-hidden mr-4">
+                                <img src="/placeholder.svg" alt="Emma Davis" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="font-heading font-semibold text-foreground">Emma Davis</div>
+                                <div class="font-body text-sm text-muted-foreground">Teacher</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing Preview -->
+        <section class="py-16" style="background-color: hsl(210 15% 12%);">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-16" data-aos="fade-up">
+                    <h2 class="font-heading text-4xl font-bold text-foreground mb-4">
+                        Choose Your Plan
+                    </h2>
+                    <p class="font-body text-lg text-muted-foreground max-w-2xl mx-auto">
+                        Flexible membership options designed to fit your lifestyle and budget.
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div class="card relative" data-aos="fade-up" data-aos-delay="0">
+                        <div class="p-6">
+                            <div class="text-center mb-6">
+                                <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Basic</h3>
+                                <div class="flex items-baseline justify-center">
+                                    <span class="font-heading text-5xl font-bold text-foreground">$29</span>
+                                    <span class="font-body text-muted-foreground ml-2">/month</span>
+                                </div>
+                            </div>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Gym access during off-peak hours</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Basic equipment usage</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Locker room access</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Mobile app access</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="btn-outline w-full justify-center">Choose Plan</a>
+                        </div>
+                    </div>
+                    <div class="card relative border-primary shadow-lg transform scale-105" data-aos="fade-up" data-aos-delay="150">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="badge">Most Popular</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-center mb-6">
+                                <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Premium</h3>
+                                <div class="flex items-baseline justify-center">
+                                    <span class="font-heading text-5xl font-bold text-foreground">$59</span>
+                                    <span class="font-body text-muted-foreground ml-2">/month</span>
+                                </div>
+                            </div>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">24/7 gym access</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">All equipment and classes</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">2 personal training sessions</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Nutrition consultation</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Guest privileges</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="btn-primary w-full justify-center">Choose Plan</a>
+                        </div>
+                    </div>
+                    <div class="card relative" data-aos="fade-up" data-aos-delay="300">
+                        <div class="p-6">
+                            <div class="text-center mb-6">
+                                <h3 class="font-heading text-2xl font-bold text-foreground mb-2">Elite</h3>
+                                <div class="flex items-baseline justify-center">
+                                    <span class="font-heading text-5xl font-bold text-foreground">$99</span>
+                                    <span class="font-body text-muted-foreground ml-2">/month</span>
+                                </div>
+                            </div>
+                            <ul class="space-y-3 mb-8">
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Everything in Premium</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Unlimited personal training</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Priority class booking</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Massage therapy sessions</span>
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="h-5 w-5 text-primary mr-3 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/>
+                                    </svg>
+                                    <span class="font-body text-muted-foreground">Meal planning service</span>
+                                </li>
+                            </ul>
+                            <a href="#" class="btn-outline w-full justify-center">Choose Plan</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-12">
+                    <a href="#" class="btn-outline btn-lg">
+                        View All Plans
+                        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-16 gradient-bg-2">
+            <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center" data-aos="fade-up">
+                <h2 class="font-heading text-4xl font-bold text-white mb-4">
+                    Ready to Start Your Transformation?
+                </h2>
+                <p class="font-body text-xl text-white/90 mb-8">
+                    Join thousands of members who have already transformed their lives at FitElite.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#" class="btn-lg bg-white text-primary hover:bg-white/90 inline-flex items-center justify-center">
+                        Start Free Trial
+                        <svg class="ml-2 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </a>
+                    <a href="#" class="btn-lg border-white text-white hover:bg-white hover:text-primary inline-flex items-center justify-center" style="border: 1px solid white; background: transparent;">
+                        Schedule Tour
+                        <svg class="ml-2 h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.11 0-1.99.9-1.99 2L3 19c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zM7 10h5v5H7z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border" style="background-color: hsl(210 15% 12%);">
+        <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="flex h-10 w-10 items-center justify-center rounded-full bg-primary">
+                            <svg class="h-6 w-6 text-primary-foreground" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14 2v6.5c0 1.7-1.3 3-3 3s-3-1.3-3-3V2h2v6.5c0 .6.4 1 1 1s1-.4 1-1V2h2zm-7 8.5c1.7 0 3-1.3 3-3V2H8v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2H4v5.5c0 1.7 1.3 3 3 3zm10 0c1.7 0 3-1.3 3-3V2h-2v5.5c0 .6-.4 1-1 1s-1-.4-1-1V2h-2v5.5c0 1.7 1.3 3 3 3z"/>
+                            </svg>
+                        </div>
+                        <span class="font-heading text-2xl font-bold text-foreground">FitElite</span>
+                    </div>
+                    <p class="font-body text-muted-foreground max-w-md mb-6">
+                        Transform your body and mind at FitElite, where premium fitness meets personal excellence. Our state-of-the-art facility and expert trainers are here to guide you on your fitness journey.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://facebook.com/fitelitegym" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform" aria-label="Follow us on Facebook">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </a>
+                        <a href="https://instagram.com/fitelitegym" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform" aria-label="Follow us on Instagram">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.624 5.367 11.99 11.988 11.99s11.987-5.366 11.987-11.99C24.004 5.367 18.641.001 12.017.001zm0 21.988c-5.518 0-9.999-4.48-9.999-9.999 0-5.518 4.481-9.999 9.999-9.999s9.999 4.481 9.999 9.999c0 5.519-4.481 9.999-9.999 9.999z"/>
+                            </svg>
+                        </a>
+                        <a href="https://youtube.com/@fitelitegym" target="_blank" rel="noopener noreferrer" class="text-muted-foreground hover:text-primary transition-all duration-300 hover:scale-110 transform" aria-label="Subscribe to our YouTube channel">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h3 class="font-heading text-lg font-semibold text-foreground mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Home</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Programs</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Classes</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Pricing</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Trainers</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Blog</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Events</a></li>
+                        <li><a href="#" class="font-body text-muted-foreground hover:text-primary transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="font-heading text-lg font-semibold text-foreground mb-4">Contact Us</h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                            </svg>
+                            <span class="font-body text-muted-foreground">(555) 123-4567</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                            </svg>
+                            <span class="font-body text-muted-foreground">info@fitelite.com</span>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <svg class="h-5 w-5 text-primary mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                            </svg>
+                            <span class="font-body text-muted-foreground">
+                                123 Fitness Street<br>
+                                Elite District, ED 12345
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-8 pt-8 border-t border-border">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="font-body text-muted-foreground text-sm">
+                        © 2024 FitElite. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6 mt-4 md:mt-0">
+                        <a href="#" class="font-body text-muted-foreground hover:text-primary text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="font-body text-muted-foreground hover:text-primary text-sm transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Minimal JavaScript for interactions -->
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuButton.addEventListener('click', function() {
+            mobileMenu.classList.toggle('active');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Simple scroll animation trigger
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('[data-aos]');
+            elements.forEach((element) => {
+                const elementTop = element.getBoundingClientRect().top;
+                const elementVisible = 150;
+                
+                if (elementTop < window.innerHeight - elementVisible) {
+                    element.classList.add('aos-animate');
+                }
+            });
+        }
+
+        // Initialize animations on scroll
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
