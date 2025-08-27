@@ -198,8 +198,15 @@ document.addEventListener('DOMContentLoaded', function() {
         goToSlide(0);
         startAutoSlide();
     }
-});
-        // Smooth scroll for navigation links
+
+
+
+    
+
+
+
+
+          // Smooth scroll for navigation links
         document.addEventListener('DOMContentLoaded', function() {
             const navLinks = document.querySelectorAll('a[href^="#"]');
             
@@ -262,6 +269,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }).mount();
     }
+
+
+    // --- Testimonials Slider Logic ---
+    const testimonialsSlider = document.getElementById('testimonials-slider');
+    if (testimonialsSlider) {
+        new Splide(testimonialsSlider, {
+            type: 'loop',
+            perPage: 2,
+            perMove: 1,
+            gap: '2rem', // 32px
+            autoplay: true,
+            interval: 5000, // 5 সেকেন্ড পর স্লাইড পরিবর্তন
+            pauseOnHover: true,
+            arrows: false, // তীর চিহ্ন থাকবে না
+            pagination: true, // নিচে ডট থাকবে
+            breakpoints: {
+                768: { // 768px এর নিচের স্ক্রিন সাইজের জন্য (মোবাইল)
+                    perPage: 1, // একটি করে টেস্টিমোনিয়াল দেখাবে
+                    gap: '1rem',
+                },
+            }
+        }).mount();
+    }
+});
+  
+
 
 
 
