@@ -1,6 +1,10 @@
     
 
-        @keyframes float {
+       html,
+body {
+    overflow-x: hidden; /* এটি শুধু ডানে-বামে অপ্রয়োজনীয় স্ক্রল বন্ধ করবে */
+}
+       @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-20px); }
         }
@@ -10,6 +14,14 @@
     display: none;
 }
  
+
+.navbar-fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    animation: slideDown 0.5s ease-out;
+}
 /* Show active mobile menu */
 .mobile-menu.active {
     display: block;
