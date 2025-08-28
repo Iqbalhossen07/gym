@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - FitElite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { merriweather: ['Merriweather', 'serif'], lora: ['Lora', 'serif'], playfair: ['Playfair Display', 'serif'], },
+                    colors: { 'gym': { 'dark': '#0a0a0a', 'darker': '#070707', 'gray': '#1a1a1a', 'light-gray': '#2a2a2a', 'accent': '#ff6b35', 'accent-dark': '#e55a2b', 'gold': '#d4af37', 'gold-dark': '#b8941f', }, },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gym-dark text-white font-lora">
+
+    <header id="page-header" class="relative">
+        <div id="top-bar" class="bg-gym-gray text-sm text-gray-300 py-2 hidden sm:block"></div>
+        <nav id="main-nav" class="w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-t sm:border-t-0 border-gym-light-gray">
+            <div class="container mx-auto container-padding">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex-shrink-0"><a href="index.html" class="flex items-center space-x-2"><i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i><span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span></a></div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="hover:text-gym-accent transition-colors">Home</a>
+                        <a href="programs.html" class="hover:text-gym-accent transition-colors">Programs</a>
+                        <a href="trainers.html" class="hover:text-gym-accent transition-colors">Trainers</a>
+                        <a href="gallery.html" class="hover:text-gym-accent transition-colors">Gallery</a>
+                        <a href="blog.html" class="hover:text-gym-accent transition-colors">Blog</a>
+                        <a href="contact.html" class="text-gym-accent transition-colors">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hidden sm:block bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">Join Now</button>
+                        <button id="mobile-menu-button" class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gym-dark border-t border-gym-light-gray"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-gym-dark">
+            <div class="relative container mx-auto container-padding text-center">
+                <h1 class="text-4xl md:text-6xl font-merriweather font-bold text-gradient" data-aos="fade-up">Get In Touch</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="200">
+                    We're here to help! Whether you have a question about memberships, programs, or anything else, our team is ready to answer all your questions.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-gray">
+            <div class="container mx-auto container-padding">
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="bg-gym-dark p-8 rounded-lg" data-aos="fade-up">
+                        <i data-lucide="map-pin" class="w-10 h-10 mx-auto text-gym-accent mb-4"></i>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Our Address</h3>
+                        <p class="text-gray-300">Sadar Road, Narsingdi,<br>Dhaka, Bangladesh</p>
+                    </div>
+                    <div class="bg-gym-dark p-8 rounded-lg" data-aos="fade-up" data-aos-delay="100">
+                        <i data-lucide="mail" class="w-10 h-10 mx-auto text-gym-accent mb-4"></i>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Email Us</h3>
+                        <p class="text-gray-300 hover:text-gym-accent"><a href="mailto:info@fitelite.com">info@fitelite.com</a></p>
+                    </div>
+                    <div class="bg-gym-dark p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                        <i data-lucide="phone" class="w-10 h-10 mx-auto text-gym-accent mb-4"></i>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Call Us</h3>
+                        <p class="text-gray-300 hover:text-gym-accent"><a href="tel:+8801234567890">(+880) 123-4567890</a></p>
+                    </div>
+                    <div class="bg-gym-dark p-8 rounded-lg" data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="clock" class="w-10 h-10 mx-auto text-gym-accent mb-4"></i>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Opening Hours</h3>
+                        <p class="text-gray-300">Mon - Sat: 6 AM - 11 PM<br>24/7 for Members</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-dark">
+            <div class="container mx-auto container-padding">
+                <div class="grid lg:grid-cols-2 gap-12 items-start">
+                    <div class="h-96 lg:h-full min-h-[450px]" data-aos="fade-up">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d116634.3015482319!2d90.6559567972656!3d23.948286900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37543168ddc03635%3A0x29c39031a03a7a21!2sNarsingdi!5e0!3m2!1sen!2sbd!4v1724784411139!5m2!1sen!2sbd" class="w-full h-full border-0 rounded-lg shadow-lg" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                    <div class="bg-gym-gray p-8 rounded-lg" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="text-3xl font-merriweather font-bold mb-6">Send Us a Message</h2>
+                        <form action="#" method="POST" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-semibold mb-2">Full Name</label>
+                                <input type="text" id="name" name="name" class="w-full bg-gym-light-gray border-gym-gray rounded-md p-3 focus:border-gym-accent focus:ring focus:ring-gym-accent focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-semibold mb-2">Email Address</label>
+                                <input type="email" id="email" name="email" class="w-full bg-gym-light-gray border-gym-gray rounded-md p-3 focus:border-gym-accent focus:ring focus:ring-gym-accent focus:ring-opacity-50">
+                            </div>
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold mb-2">Subject</label>
+                                <select id="subject" name="subject" class="w-full bg-gym-light-gray border-gym-gray rounded-md p-3 focus:border-gym-accent focus:ring focus:ring-gym-accent focus:ring-opacity-50">
+                                    <option>General Inquiry</option>
+                                    <option>Membership Question</option>
+                                    <option>Personal Training</option>
+                                    <option>Feedback</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-semibold mb-2">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full bg-gym-light-gray border-gym-gray rounded-md p-3 focus:border-gym-accent focus:ring focus:ring-gym-accent focus:ring-opacity-50"></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="w-full bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-lg py-3 rounded-lg transition-colors">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-gray">
+            <div class="container mx-auto container-padding">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-merriweather font-bold" data-aos="fade-up">Frequently Asked Questions</h2>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-4">
+                    <details class="bg-gym-dark p-6 rounded-lg" data-aos="fade-up">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            What are the gym's opening hours?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-300 mt-4">Our staff is available from 6 AM to 11 PM, Monday to Saturday. However, registered members with keycard access can use the gym 24/7.</p>
+                    </details>
+                    <details class="bg-gym-dark p-6 rounded-lg" data-aos="fade-up">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Do you offer a free trial pass?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-300 mt-4">Yes, we offer a one-day free trial pass for new visitors. You can sign up for it at the reception desk. Please bring a valid ID.</p>
+                    </details>
+                    <details class="bg-gym-dark p-6 rounded-lg" data-aos="fade-up">
+                        <summary class="font-semibold text-lg cursor-pointer flex justify-between items-center">
+                            Can I freeze my membership?
+                            <i data-lucide="chevron-down" class="w-5 h-5 transition-transform"></i>
+                        </summary>
+                        <p class="text-gray-300 mt-4">Yes, you can freeze your membership for a minimum of one month and a maximum of three months per year for a nominal fee. Please contact our support team for assistance.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contact-footer" class="bg-gym-darker py-16"></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>

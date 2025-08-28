@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - FitElite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { merriweather: ['Merriweather', 'serif'], lora: ['Lora', 'serif'], playfair: ['Playfair Display', 'serif'], },
+                    colors: { 'gym': { 'dark': '#0a0a0a', 'darker': '#070707', 'gray': '#1a1a1a', 'light-gray': '#2a2a2a', 'accent': '#ff6b35', 'accent-dark': '#e55a2b', 'gold': '#d4af37', 'gold-dark': '#b8941f', }, },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gym-dark text-white font-lora">
+
+    <header id="page-header" class="relative">
+        <div id="top-bar" class="bg-gym-gray text-sm text-gray-300 py-2 hidden sm:block"></div>
+        <nav id="main-nav" class="w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-t sm:border-t-0 border-gym-light-gray">
+            <div class="container mx-auto container-padding">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex-shrink-0"><a href="index.html" class="flex items-center space-x-2"><i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i><span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span></a></div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="hover:text-gym-accent transition-colors">Home</a>
+                        <a href="about.html" class="text-gym-accent transition-colors">About</a>
+                        <a href="programs.html" class="hover:text-gym-accent transition-colors">Programs</a>
+                        <a href="trainers.html" class="hover:text-gym-accent transition-colors">Trainers</a>
+                        <a href="gallery.html" class="hover:text-gym-accent transition-colors">Gallery</a>
+                        <a href="blog.html" class="hover:text-gym-accent transition-colors">Blog</a>
+                        <a href="contact.html" class="hover:text-gym-accent transition-colors">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hidden sm:block bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">Join Now</button>
+                        <button id="mobile-menu-button" class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gym-dark border-t border-gym-light-gray"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-gym-gray">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1558611848-73f7eb4001a1?auto=format&fit=crop&w=1920&h=1080');"></div>
+            <div class="relative container mx-auto container-padding text-center">
+                <h1 class="text-4xl md:text-6xl font-merriweather font-bold text-gradient" data-aos="fade-up">About FitElite</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="200">
+                    We are more than just a gym; we are a community dedicated to your personal transformation.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-dark">
+            <div class="container mx-auto container-padding">
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <img src="https://images.unsplash.com/photo-1734668486909-4637ecd66408?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="rounded-lg shadow-2xl object-cover w-full h-full">
+                    </div>
+                    <div data-aos="fade-left">
+                        <span class="text-gym-accent font-semibold">Our Mission</span>
+                        <h2 class="text-3xl md:text-4xl font-merriweather font-bold mt-2 mb-6">A New Standard of Fitness in Narsingdi</h2>
+                        <p class="text-gray-300 leading-relaxed mb-4">FitElite was founded with a simple vision: to create a fitness sanctuary in Narsingdi where anyone, regardless of their fitness level, can feel welcomed, supported, and inspired. We noticed a need for a premium facility that combines state-of-the-art equipment with a strong sense of community.</p>
+                        <p class="text-gray-300 leading-relaxed">Our mission is to empower you to achieve your personal best. We believe that fitness is a journey, not a destination, and we are here to guide you every step of the way with expert coaching, world-class facilities, and a motivating atmosphere.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-gray">
+            <div class="container mx-auto container-padding">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-merriweather font-bold" data-aos="fade-up">Our Core Values</h2>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div data-aos="fade-up" data-aos-delay="100">
+                        <div class="bg-gym-dark p-6 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4 border-2 border-gym-accent">
+                            <i data-lucide="users" class="w-12 h-12 text-gym-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Community</h3>
+                        <p class="text-gray-300">We foster a supportive and inclusive environment where members motivate each other.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="200">
+                        <div class="bg-gym-dark p-6 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4 border-2 border-gym-accent">
+                            <i data-lucide="award" class="w-12 h-12 text-gym-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Expertise</h3>
+                        <p class="text-gray-300">Our certified trainers provide professional guidance to ensure safe and effective workouts.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="300">
+                        <div class="bg-gym-dark p-6 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4 border-2 border-gym-accent">
+                            <i data-lucide="shield-check" class="w-12 h-12 text-gym-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Quality</h3>
+                        <p class="text-gray-300">We invest in the best equipment and maintain pristine facilities for an unmatched experience.</p>
+                    </div>
+                    <div data-aos="fade-up" data-aos-delay="400">
+                        <div class="bg-gym-dark p-6 rounded-full w-24 h-24 mx-auto flex items-center justify-center mb-4 border-2 border-gym-accent">
+                            <i data-lucide="trending-up" class="w-12 h-12 text-gym-accent"></i>
+                        </div>
+                        <h3 class="text-xl font-merriweather font-bold mb-2">Transformation</h3>
+                        <p class="text-gray-300">We are committed to helping you achieve real, measurable, and lasting results.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer id="contact" class="bg-gym-darker py-16"></footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
