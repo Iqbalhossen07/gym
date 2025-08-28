@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strength Training Program - FitElite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { merriweather: ['Merriweather', 'serif'], lora: ['Lora', 'serif'], playfair: ['Playfair Display', 'serif'], },
+                    colors: { 'gym': { 'dark': '#0a0a0a', 'darker': '#070707', 'gray': '#1a1a1a', 'light-gray': '#2a2a2a', 'accent': '#ff6b35', 'accent-dark': '#e55a2b', 'gold': '#d4af37', 'gold-dark': '#b8941f', }, },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gym-dark text-white font-lora">
+
+    <header id="page-header" class="relative">
+        <div id="top-bar" class="bg-gym-gray text-sm text-gray-300 py-2 hidden sm:block">
+            <div class="container mx-auto container-padding flex justify-between items-center"></div>
+        </div>
+        <nav id="main-nav" class="w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-t sm:border-t-0 border-gym-light-gray">
+            <div class="container mx-auto container-padding">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex-shrink-0"><a href="index.html" class="flex items-center space-x-2"><i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i><span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span></a></div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="hover:text-gym-accent transition-colors">Home</a>
+                        <a href="programs.html" class="text-gym-accent transition-colors">Programs</a>
+                        <a href="trainers.html" class="hover:text-gym-accent transition-colors">Trainers</a>
+                        <a href="#pricing" class="hover:text-gym-accent transition-colors">Pricing</a>
+                        <a href="#contact" class="hover:text-gym-accent transition-colors">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hidden sm:block bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">Join Now</button>
+                        <button id="mobile-menu-button" class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gym-dark border-t border-gym-light-gray"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-gym-gray">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1576678927484-cc907957088c?auto=format&fit=crop&w=1920&h=1080');"></div>
+            <div class="relative container mx-auto container-padding">
+                <span class="text-gym-accent font-semibold" data-aos="fade-up">Fitness Program</span>
+                <h1 class="text-4xl md:text-6xl font-merriweather font-bold text-gradient mt-2" data-aos="fade-up" data-aos-delay="100">Strength Training</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mt-4" data-aos="fade-up" data-aos-delay="200">
+                    Build power, muscle, and confidence with our comprehensive strength training program.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-dark">
+            <div class="container mx-auto container-padding">
+                <div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+                    
+                    <div class="lg:col-span-2">
+                        <div class="space-y-8">
+                            <div>
+                                <h2 class="text-3xl font-merriweather font-bold mb-4">What is Strength Training?</h2>
+                                <p class="text-gray-300 leading-relaxed">
+                                    Strength training, also known as resistance training, is a form of exercise designed to improve muscular strength and endurance. It involves using resistance—like free weights, machines, or your own body weight—to induce muscular contraction, which builds the strength, anaerobic endurance, and size of skeletal muscles. Our program is structured to help you master the fundamental lifts and principles for continuous progress.
+                                </p>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-2xl font-merriweather font-bold mb-4">What You Will Learn</h3>
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-6 h-6 text-gym-accent mr-3 mt-1 flex-shrink-0"></i><span><strong>Proper Form:</strong> Master the techniques for major compound lifts including squats, deadlifts, and bench presses to maximize results and prevent injury.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-6 h-6 text-gym-accent mr-3 mt-1 flex-shrink-0"></i><span><strong>Progressive Overload:</strong> Understand the core principle of getting stronger by gradually increasing the stress on your muscles over time.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-6 h-6 text-gym-accent mr-3 mt-1 flex-shrink-0"></i><span><strong>Nutrition Basics:</strong> Learn the fundamentals of nutrition for muscle growth, recovery, and overall performance.</span></li>
+                                    <li class="flex items-start"><i data-lucide="check-circle" class="w-6 h-6 text-gym-accent mr-3 mt-1 flex-shrink-0"></i><span><strong>Workout Structuring:</strong> Know how to structure your workouts, including exercise selection, sets, reps, and rest periods.</span></li>
+                                </ul>
+                            </div>
+
+                            <div class="grid sm:grid-cols-2 gap-4">
+                                <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?auto=format&fit=crop&w=600&h=400" class="rounded-lg object-cover w-full h-64" alt="Strength training class">
+                                <img src="https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?auto=format&fit=crop&w=600&h=400" class="rounded-lg object-cover w-full h-64" alt="Gym members">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-1">
+                        <div class="bg-gym-gray p-6 rounded-lg sticky top-32">
+                            <h3 class="text-xl font-merriweather font-bold mb-6 border-b border-gym-light-gray pb-4">Program Overview</h3>
+                            <div class="space-y-4">
+                                <div class="flex items-center">
+                                    <i data-lucide="clock" class="w-5 h-5 text-gym-accent mr-3"></i>
+                                    <div>
+                                        <p class="font-semibold">Duration</p>
+                                        <p class="text-sm text-gray-400">60 Minute Classes</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="zap" class="w-5 h-5 text-gym-accent mr-3"></i>
+                                    <div>
+                                        <p class="font-semibold">Intensity</p>
+                                        <p class="text-sm text-gray-400">Moderate to High</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-center">
+                                    <i data-lucide="users" class="w-5 h-5 text-gym-accent mr-3"></i>
+                                    <div>
+                                        <p class="font-semibold">Best For</p>
+                                        <p class="text-sm text-gray-400">Muscle Gain & Strength</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <h4 class="text-lg font-merriweather font-bold mt-8 mb-4">Weekly Schedule</h4>
+                            <ul class="text-sm text-gray-300 space-y-2">
+                                <li><strong>Monday:</strong> 6:00 PM - 7:00 PM</li>
+                                <li><strong>Wednesday:</strong> 7:00 PM - 8:00 PM</li>
+                                <li><strong>Friday:</strong> 6:00 PM - 7:00 PM</li>
+                                <li><strong>Saturday:</strong> 10:00 AM - 11:00 AM</li>
+                            </ul>
+                            <button class="w-full mt-8 bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold py-3 rounded-lg transition-colors">Join This Program</button>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gym-darker py-16"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic', });
+        lucide.createIcons();
+    </script>
+</body>
+</html>

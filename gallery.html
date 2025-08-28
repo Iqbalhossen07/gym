@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - FitElite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/css/lightgallery.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { merriweather: ['Merriweather', 'serif'], lora: ['Lora', 'serif'], playfair: ['Playfair Display', 'serif'], },
+                    colors: { 'gym': { 'dark': '#0a0a0a', 'darker': '#070707', 'gray': '#1a1a1a', 'light-gray': '#2a2a2a', 'accent': '#ff6b35', 'accent-dark': '#e55a2b', 'gold': '#d4af37', 'gold-dark': '#b8941f', }, },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gym-dark text-white font-lora">
+
+    <header id="page-header" class="relative">
+        <div id="top-bar" class="bg-gym-gray text-sm text-gray-300 py-2 hidden sm:block"></div>
+        <nav id="main-nav" class="w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-t sm:border-t-0 border-gym-light-gray">
+            <div class="container mx-auto container-padding">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex-shrink-0"><a href="index.html" class="flex items-center space-x-2"><i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i><span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span></a></div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="hover:text-gym-accent transition-colors">Home</a>
+                        <a href="programs.html" class="hover:text-gym-accent transition-colors">Programs</a>
+                        <a href="trainers.html" class="hover:text-gym-accent transition-colors">Trainers</a>
+                        <a href="gallery.html" class="text-gym-accent transition-colors">Gallery</a>
+                        <a href="#pricing" class="hover:text-gym-accent transition-colors">Pricing</a>
+                        <a href="#contact" class="hover:text-gym-accent transition-colors">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hidden sm:block bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">Join Now</button>
+                        <button id="mobile-menu-button" class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gym-dark border-t border-gym-light-gray"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-gym-gray">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1574680096145-d05b474e2155?auto=format&fit=crop&w=1920&h=1080');"></div>
+            <div class="relative container mx-auto container-padding text-center">
+                <h1 class="text-4xl md:text-6xl font-merriweather font-bold text-gradient" data-aos="fade-up">Our Gallery</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="200">
+                    A glimpse inside FitElite. Explore our state-of-the-art facilities, energetic classes, and dedicated members.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-dark">
+            <div class="container mx-auto container-padding">
+                <div id="gallery-filters" class="flex flex-wrap justify-center gap-2 md:gap-4 mb-12" data-aos="fade-up">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="equipment">Equipment</button>
+                    <button class="filter-btn" data-filter="classes">Classes</button>
+                    <button class="filter-btn" data-filter="facilities">Facilities</button>
+                </div>
+
+                <div id="lightgallery" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <a href="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="equipment">
+                        <img alt="Gym equipment" src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="classes">
+                        <img alt="Yoga class" src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="facilities">
+                        <img alt="Locker room" src="https://images.unsplash.com/photo-1571902943202-507ec2618e8f?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="equipment">
+                        <img alt="Barbells" src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="classes">
+                        <img alt="HIIT class" src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="equipment">
+                        <img alt="Crossfit setup" src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1548690312-e3b511d5b111?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="classes">
+                        <img alt="Personal training" src="https://images.unsplash.com/photo-1548690312-e3b511d5b111?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=1200&q=80" class="gallery-item" data-category="facilities">
+                        <img alt="Gym interior" src="https://images.unsplash.com/photo-1549060279-7e168fcee0c2?auto=format&fit=crop&w=400&h=400&q=80" class="gallery-image"/>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gym-darker py-16"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.1/lightgallery.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize libraries on this page
+            AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+            lucide.createIcons();
+
+            // Initialize LightGallery
+            const gallery = document.getElementById('lightgallery');
+            if(gallery) {
+                lightGallery(gallery, {
+                    selector: '.gallery-item',
+                    download: false
+                });
+            }
+
+            // Gallery Filter Logic
+            const filterButtons = document.querySelectorAll('#gallery-filters .filter-btn');
+            const galleryItems = document.querySelectorAll('#lightgallery .gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filter = button.getAttribute('data-filter');
+
+                    galleryItems.forEach(item => {
+                        item.style.display = 'none';
+                        if (filter === 'all' || item.getAttribute('data-category') === filter) {
+                            item.style.display = 'block';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+    <style>
+        .filter-btn {
+            background-color: transparent;
+            border: 1px solid #2a2a2a;
+            color: #f8fafc;
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .filter-btn:hover {
+            background-color: #ff6b35;
+            border-color: #ff6b35;
+            color: #0a0a0a;
+        }
+        .filter-btn.active {
+            background-color: #ff6b35;
+            border-color: #ff6b35;
+            color: #0a0a0a;
+        }
+        .gallery-item {
+            display: block;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            aspect-ratio: 1 / 1;
+        }
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.05);
+        }
+    </style>
+</body>
+</html>

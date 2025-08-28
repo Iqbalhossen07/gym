@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - FitElite</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: { merriweather: ['Merriweather', 'serif'], lora: ['Lora', 'serif'], playfair: ['Playfair Display', 'serif'], },
+                    colors: { 'gym': { 'dark': '#0a0a0a', 'darker': '#070707', 'gray': '#1a1a1a', 'light-gray': '#2a2a2a', 'accent': '#ff6b35', 'accent-dark': '#e55a2b', 'gold': '#d4af37', 'gold-dark': '#b8941f', }, },
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gym-dark text-white font-lora">
+
+    <header id="page-header" class="relative">
+        <div id="top-bar" class="bg-gym-gray text-sm text-gray-300 py-2 hidden sm:block"></div>
+        <nav id="main-nav" class="w-full z-50 bg-gym-dark/95 backdrop-blur-sm border-b border-t sm:border-t-0 border-gym-light-gray">
+            <div class="container mx-auto container-padding">
+                <div class="flex items-center justify-between h-16">
+                    <div class="flex-shrink-0"><a href="index.html" class="flex items-center space-x-2"><i data-lucide="dumbbell" class="w-8 h-8 text-gym-accent"></i><span class="text-2xl font-merriweather font-bold text-gradient">FitElite</span></a></div>
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="index.html" class="hover:text-gym-accent transition-colors">Home</a>
+                        <a href="programs.html" class="hover:text-gym-accent transition-colors">Programs</a>
+                        <a href="trainers.html" class="hover:text-gym-accent transition-colors">Trainers</a>
+                        <a href="gallery.html" class="hover:text-gym-accent transition-colors">Gallery</a>
+                        <a href="blog.html" class="text-gym-accent transition-colors">Blog</a>
+                        <a href="#pricing" class="hover:text-gym-accent transition-colors">Pricing</a>
+                        <a href="#contact" class="hover:text-gym-accent transition-colors">Contact</a>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <button class="hidden sm:block bg-gym-accent hover:bg-gym-accent-dark text-black font-semibold text-sm px-4 py-2 rounded-md transition-colors">Join Now</button>
+                        <button id="mobile-menu-button" class="md:hidden p-2"><i data-lucide="menu" class="w-6 h-6"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu" class="mobile-menu md:hidden bg-gym-dark border-t border-gym-light-gray"></div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="relative py-20 md:py-32 bg-gym-gray">
+            <div class="absolute inset-0 bg-cover bg-center opacity-20" style="background-image: url('https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=1920&h=1080');"></div>
+            <div class="relative container mx-auto container-padding text-center">
+                <h1 class="text-4xl md:text-6xl font-merriweather font-bold text-gradient" data-aos="fade-up">FitElite Blog</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mt-4" data-aos="fade-up" data-aos-delay="200">
+                    Expert tips, workout guides, and nutrition advice to enhance your fitness journey.
+                </p>
+            </div>
+        </section>
+
+        <section class="section-padding bg-gym-dark">
+            <div class="container mx-auto container-padding">
+                <div class="grid lg:grid-cols-3 gap-8">
+                    <div class="lg:col-span-2">
+                        <div class="space-y-12">
+                            
+                            <div class="group" data-aos="fade-up">
+                                <a href="single-post.html">
+                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&h=450" class="rounded-lg mb-6 w-full object-cover">
+                                </a>
+                                <div class="flex items-center space-x-4 text-sm text-gray-400 mb-2">
+                                    <span>August 28, 2025</span>
+                                    <span class="w-1.5 h-1.5 bg-gray-500 rounded-full"></span>
+                                    <span>Nutrition</span>
+                                </div>
+                                <a href="single-post.html">
+                                    <h2 class="text-2xl md:text-3xl font-merriweather font-bold group-hover:text-gym-accent transition-colors">5 Essential Nutrition Tips for Muscle Building</h2>
+                                </a>
+                                <p class="text-gray-300 mt-4">Discover the key nutritional strategies that will maximize your muscle growth, improve recovery, and fuel your workouts for better results.</p>
+                                <a href="single-post.html" class="inline-flex items-center mt-4 font-semibold text-gym-accent hover:text-gym-accent-dark transition-colors">
+                                    Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                            </div>
+
+                            <div class="group" data-aos="fade-up">
+                                <a href="single-post.html">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=800&h=450" class="rounded-lg mb-6 w-full object-cover">
+                                </a>
+                                <div class="flex items-center space-x-4 text-sm text-gray-400 mb-2">
+                                    <span>August 20, 2025</span>
+                                    <span class="w-1.5 h-1.5 bg-gray-500 rounded-full"></span>
+                                    <span>Training</span>
+                                </div>
+                                <a href="single-post.html">
+                                    <h2 class="text-2xl md:text-3xl font-merriweather font-bold group-hover:text-gym-accent transition-colors">The Science Behind High-Intensity Interval Training (HIIT)</h2>
+                                </a>
+                                <p class="text-gray-300 mt-4">Learn why HIIT is one of the most effective training methods for fat loss, cardiovascular health, and improving athletic performance in less time.</p>
+                                <a href="single-post.html" class="inline-flex items-center mt-4 font-semibold text-gym-accent hover:text-gym-accent-dark transition-colors">
+                                    Read More <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
+                                </a>
+                            </div>
+
+                            </div>
+                    </div>
+
+                    <aside class="lg:col-span-1">
+                        <div class="bg-gym-gray p-6 rounded-lg sticky top-32">
+                            <h3 class="text-xl font-merriweather font-bold mb-6 border-b border-gym-light-gray pb-4">Categories</h3>
+                            <ul class="space-y-3">
+                                <li><a href="#" class="flex justify-between items-center hover:text-gym-accent"><span>Nutrition</span><span class="text-xs bg-gym-light-gray px-2 py-1 rounded">5</span></a></li>
+                                <li><a href="#" class="flex justify-between items-center hover:text-gym-accent"><span>Training</span><span class="text-xs bg-gym-light-gray px-2 py-1 rounded">8</span></a></li>
+                                <li><a href="#" class="flex justify-between items-center hover:text-gym-accent"><span>Wellness</span><span class="text-xs bg-gym-light-gray px-2 py-1 rounded">3</span></a></li>
+                                <li><a href="#" class="flex justify-between items-center hover:text-gym-accent"><span>Success Stories</span><span class="text-xs bg-gym-light-gray px-2 py-1 rounded">2</span></a></li>
+                            </ul>
+
+                            <h3 class="text-xl font-merriweather font-bold mt-10 mb-6 border-b border-gym-light-gray pb-4">Recent Posts</h3>
+                            <div class="space-y-4">
+                                <a href="#" class="group flex items-center space-x-4">
+                                    <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=100&h=100" class="w-16 h-16 rounded-md object-cover">
+                                    <div>
+                                        <p class="font-semibold group-hover:text-gym-accent transition-colors">5 Essential Nutrition Tips</p>
+                                        <p class="text-xs text-gray-400">August 28, 2025</p>
+                                    </div>
+                                </a>
+                                <a href="#" class="group flex items-center space-x-4">
+                                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&w=100&h=100" class="w-16 h-16 rounded-md object-cover">
+                                    <div>
+                                        <p class="font-semibold group-hover:text-gym-accent transition-colors">The Science Behind HIIT</p>
+                                        <p class="text-xs text-gray-400">August 20, 2025</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gym-darker py-16"></footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ duration: 1000, once: true, easing: 'ease-out-cubic' });
+            lucide.createIcons();
+            // Note: Main script logic is in script.js
+        });
+    </script>
+</body>
+</html>
